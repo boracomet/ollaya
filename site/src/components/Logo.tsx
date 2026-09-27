@@ -42,7 +42,7 @@ export function Logo() {
     <span class="flex items-baseline gap-2 text-fg">
       {/* The owl sits 5px inside its 28px box; pull it out so its edge lines up with the page. */}
       <LogoMark class="-ml-[5px] size-7 self-center" />
-      <span class="text-lg leading-7 font-medium tracking-tight">
+      <span class="text-lg leading-7 font-medium tracking-tight whitespace-nowrap">
         ollaya
         {/* vertical-align: middle centres the badge on the wordmark's x-height, whatever the font. */}
         <span

@@ -117,11 +117,11 @@ export function Header({ active, hideSearch }: { active?: NavKey; hideSearch?: b
   return (
     <header class="sticky top-0 z-40 bg-canvas">
       <nav aria-label="Main" class="mx-auto flex h-16 w-full max-w-6xl items-center gap-4 px-4 md:gap-6 md:px-6">
-        <div class="flex items-baseline gap-6 lg:flex-1 lg:basis-0">
-          <a href="/" class="flex rounded-md" aria-label="Ollaya home">
+        <div class="flex shrink-0 items-baseline gap-6">
+          <a href="/" class="flex shrink-0 rounded-md" aria-label="Ollaya home">
             <Logo />
           </a>
-          <ul class="hidden items-baseline gap-6 text-sm md:flex">
+          <ul class="hidden items-baseline gap-6 text-sm whitespace-nowrap md:flex">
             {links.map((l) => (
               <li>
                 <a
@@ -135,10 +135,14 @@ export function Header({ active, hideSearch }: { active?: NavKey; hideSearch?: b
             ))}
           </ul>
         </div>
-        <div class="hidden min-w-0 flex-1 justify-center md:flex lg:w-[22rem] lg:flex-none">
-          {hideSearch ? null : <NavSearch />}
+        <div class="hidden min-w-0 flex-1 justify-center md:flex">
+          {hideSearch ? null : (
+            <div class="w-full max-w-[22rem]">
+              <NavSearch />
+            </div>
+          )}
         </div>
-        <div class="flex flex-1 items-center justify-end gap-2 md:flex-none lg:flex-1 lg:basis-0">
+        <div class="ml-auto flex shrink-0 items-center justify-end gap-2">
           <a
             href="/download"
             class="hidden items-center rounded-full bg-btn px-4 py-2 text-sm font-medium text-btn-fg hover:bg-btn-hover md:inline-flex"
